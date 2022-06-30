@@ -1,0 +1,45 @@
+<pre>
+<font color="#95a5a6">&#47;* Neopixel-Lampe (Code Level1 v1)</font>
+<font color="#95a5a6"> * 30.6.2022</font>
+<font color="#95a5a6"> * C. Wüpping</font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * FastLED Library: </font><u><font color="#95a5a6">https:&#47;&#47;github.com&#47;FastLED&#47;FastLED&#47;blob&#47;master&#47;library.json</font></u><font color="#95a5a6"></font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * codekit Programmieren: </font><u><font color="#95a5a6">https:&#47;&#47;edukits.co&#47;code&#47;</font></u><font color="#95a5a6"></font>
+<font color="#95a5a6"> * simulation: </font><u><font color="#95a5a6">https:&#47;&#47;wokwi.com&#47;projects&#47;new&#47;arduino-nano</font></u><font color="#95a5a6"></font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * Bibliotheken (&#34;Libraries&#34;) führen für uns bestimmte, meist komplizierte Funktionien im Hintergrund aus.</font>
+<font color="#95a5a6"> * Wenn man sie richtig benutzt, ersparen sie einem viel Arbeit.Deshalb haben die meisten Bibliotheken Beispiel-Sketche,</font>
+<font color="#95a5a6"> * die einem Helfen, die Benutzung der Bibliothek&#47;Library richtig zu verstehen und Funktionen zu entdecken.</font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * Aufgabe:</font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * geh auf </font><u><font color="#95a5a6">https:&#47;&#47;edukits.co&#47;code&#47;</font></u><font color="#95a5a6"> und schaue dir die Kategorie &#34;Colour&#34; an.</font>
+<font color="#95a5a6"> * bekommst du es hin</font>
+<font color="#95a5a6"> * 1. ALLE sieben LEDs zum Leuchten zu bringen?</font>
+<font color="#95a5a6"> * 2. deine LEDs blinken zu lassen? ;)</font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * Tipp:</font>
+<font color="#95a5a6"> * Schaue dir den Code genau an und versuche zu verstehen, was dieser tut.</font>
+<font color="#95a5a6"> * Probiere aus, was sich verändert, wenn du verschiedene Werte veränderst.</font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> * auf </font><u><font color="#95a5a6">https:&#47;&#47;wokwi.com&#47;projects&#47;new&#47;arduino-nano</font></u><font color="#95a5a6"> kannst du (auch zuhause) deinen Aufbau simulieren und ausprobieren </font>
+<font color="#95a5a6"> * </font>
+<font color="#95a5a6"> *&#47;</font>
+
+<font color="#5e6d03">#include</font> <font color="#005c5f">&#34;FastLED.h&#34;</font>
+
+<font color="#00979c">int</font> <font color="#000000">pin_leds</font> <font color="#434f54">=</font> <font color="#000000">3</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;int-Container mit dem Wert 3 und dem Namen &#34;pin_leds&#34;</font>
+<font color="#00979c">int</font> <font color="#000000">anzahl_leds</font> <font color="#434f54">=</font> <font color="#000000">7</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47;int container mit dem Wert 7 und dem Namen &#34;pin_leds&#34;</font>
+<b><font color="#d35400">CRGB</font></b> <font color="#000000">leds</font><font color="#000000">[</font><font color="#000000">anzahl_leds</font><font color="#000000">]</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; 7 LED-Objekte in einem &#34;Array&#34; mit dem Namen &#34;leds&#34;</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<b><font color="#d35400">FastLED</font></b><font color="#434f54">.</font><font color="#d35400">addLeds</font><font color="#434f54">&lt;</font><font color="#00979c">NEOPIXEL</font><font color="#434f54">,</font> <font color="#000000">pin_leds</font><font color="#434f54">&gt;</font><font color="#000000">(</font><font color="#000000">leds</font><font color="#434f54">,</font> <font color="#000000">anzahl_leds</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;LED-Objekte der FastLED-Library übergeben</font>
+<font color="#000000">}</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#000000">leds</font><font color="#000000">[</font><font color="#000000">0</font><font color="#000000">]</font> <font color="#434f54">=</font> <b><font color="#d35400">CRGB</font></b><font color="#000000">(</font><font color="#000000">50</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;LED Nr.0 (wir zählen ab null) bekommt die Farbe mit den Werten Rot= 50, grün = 50, blau = 50</font>
+ &nbsp;<b><font color="#d35400">FastLED</font></b><font color="#434f54">.</font><font color="#d35400">show</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Farbinformation an LEDs schicken</font>
+<font color="#000000">}</font>
+
+</pre>
